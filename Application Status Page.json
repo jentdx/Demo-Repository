@@ -1,0 +1,112 @@
+{
+  "TdxIpaasVersion": "1.0",
+  "ItemPId": "c4c75acd-d070-41c4-9d62-847588e3a381",
+  "ItemType": "Form",
+  "Name": "Application Status Page",
+  "Item": {
+    "Definition": {
+      "mode": 1,
+      "name": "Application Status Page",
+      "styles": "{\"theme\":\"tdx-theme-ipaas\"}",
+      "removeDefaultPadding": true,
+      "rows": [
+        {
+          "id": 1,
+          "name": "Row1",
+          "fields": [
+            {
+              "type": 32,
+              "conditions": [],
+              "actions": [],
+              "fields": [
+                {
+                  "type": 20,
+                  "conditions": [
+                    {
+                      "propId": 2,
+                      "propName": "Label",
+                      "name": "Load",
+                      "expression": "{\"type\":\"BooleanLiteral\",\"value\":true}",
+                      "valueExpression": "{\"type\":\"FormFlow\",\"flowPId\":\"b5afe69b-c5f9-482f-a552-b34979f19641\",\"flowVersion\":\"0\",\"flowData\":\"\",\"resultExpression\":null}",
+                      "type": "Init"
+                    }
+                  ],
+                  "actions": [],
+                  "id": 2,
+                  "name": "Label4",
+                  "minWidth": "100%",
+                  "maxWidth": "100%",
+                  "labelPos": "center center"
+                }
+              ],
+              "id": 1,
+              "name": "Column1",
+              "minWidth": "100%",
+              "maxWidth": "100%"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Row2",
+          "fields": [
+            {
+              "type": 32,
+              "conditions": [],
+              "fields": [
+                {
+                  "type": 35,
+                  "conditions": [],
+                  "actions": [],
+                  "hidden": true,
+                  "id": 4,
+                  "name": "Custom4",
+                  "values": {
+                    "label": "Custom",
+                    "value": "<script>\nwindow.addEventListener(\"load\", () => {\n\n\nsetTimeout(() => { document.getElementById(\"tdx-formfield-2\").style.width=\"100%\"; }, 1000);\n\n});\n</script>"
+                  }
+                }
+              ],
+              "id": 3,
+              "name": "Column3"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Row3",
+          "fields": [
+            {
+              "type": 32,
+              "conditions": [],
+              "fields": [
+                {
+                  "type": 33,
+                  "dataType": 4,
+                  "conditions": [],
+                  "actions": [],
+                  "hidden": true,
+                  "disabled": true,
+                  "id": 6,
+                  "name": "PrimaryButton6",
+                  "values": {
+                    "label": "PrimaryButton"
+                  }
+                }
+              ],
+              "id": 5,
+              "name": "Column5"
+            }
+          ]
+        }
+      ]
+    },
+    "Options_": {
+      "version": 1,
+      "requiredFormClaims": {},
+      "samlAttributes": {},
+      "queryParameters": {}
+    },
+    "FlowSecret": "------"
+  }
+}
