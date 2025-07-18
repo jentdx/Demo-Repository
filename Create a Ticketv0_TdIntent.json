@@ -1,0 +1,1442 @@
+{
+  "TdxIpaasVersion": "1.0",
+  "ItemPId": "0ae5e1eb-fca2-419c-a163-bed453f54b49",
+  "ItemType": "Intent",
+  "Name": "Create a Ticket",
+  "Item": {
+    "Utterances": [
+      {
+        "utterance": "Create a ticket"
+      },
+      {
+        "utterance": "I need to open a ticket"
+      },
+      {
+        "utterance": "Open a ticket"
+      },
+      {
+        "utterance": "Create new ticket  ",
+        "generative": true
+      },
+      {
+        "utterance": "Create support ticket  ",
+        "generative": true
+      },
+      {
+        "utterance": "Help me with a ticket  ",
+        "generative": true
+      },
+      {
+        "utterance": "I’d like to open a ticket  ",
+        "generative": true
+      },
+      {
+        "utterance": "Make a ticket  ",
+        "generative": true
+      },
+      {
+        "utterance": "Need a ticket  ",
+        "generative": true
+      },
+      {
+        "utterance": "Need to raise a ticket  ",
+        "generative": true
+      },
+      {
+        "utterance": "New ticket request  ",
+        "generative": true
+      },
+      {
+        "utterance": "Open ticket now  ",
+        "generative": true
+      },
+      {
+        "utterance": "Quick ticket  ",
+        "generative": true
+      },
+      {
+        "utterance": "Submit a ticket  ",
+        "generative": true
+      },
+      {
+        "utterance": "Ticket creation  ",
+        "generative": true
+      },
+      {
+        "utterance": "Ticket for support  ",
+        "generative": true
+      },
+      {
+        "utterance": "Ticket needed",
+        "generative": true
+      },
+      {
+        "utterance": "Ticket please  ",
+        "generative": true
+      },
+      {
+        "utterance": "Ticket submission  ",
+        "generative": true
+      }
+    ],
+    "Flow": {
+      "id": 0,
+      "stepType": "Flow",
+      "datasetName": "Global",
+      "name": "MyFlow",
+      "usesDataset": true,
+      "datasetId": "$ds$0",
+      "defaultDatasetNamePrefix": "Dataset",
+      "steps": [
+        {
+          "id": 1,
+          "datasetName": "IntentInput",
+          "stepType": "Start",
+          "usesDataset": true,
+          "intentInputDataModelVersion": 3,
+          "datasetId": "$ds$1",
+          "outputDataModel": {
+            "type": "Group",
+            "items": [
+              {
+                "type": "Value",
+                "name": "Utterance"
+              },
+              {
+                "type": "Group",
+                "name": "Intent",
+                "items": [
+                  {
+                    "type": "Value",
+                    "name": "PId"
+                  },
+                  {
+                    "type": "Value",
+                    "name": "Name"
+                  },
+                  {
+                    "type": "Value",
+                    "name": "DisplayName"
+                  },
+                  {
+                    "type": "Value",
+                    "name": "Description"
+                  }
+                ]
+              }
+            ]
+          },
+          "defaultDatasetNamePrefix": "Dataset",
+          "uiData": {"nextId":116,"designInfoWidth":210},
+          "steps": [
+            {
+              "id": -3,
+              "stepType": "Data",
+              "datasetName": "Conversation",
+              "persistedScope": "ConversationStatic",
+              "conversationStaticVersion": 11,
+              "usesDataset": true,
+              "datasetMutable": true,
+              "isPersisted": true,
+              "datasetId": "$ds$-3",
+              "outputDataModel": {
+                "type": "Group",
+                "attributes": {"readOnly":true},
+                "items": [
+                  {
+                    "type": "Value",
+                    "name": "Id",
+                    "attributes": {"dataType":"Integer","label":"Conversation id","readOnly":true}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "StartTime",
+                    "attributes": {"dataType":"DateTime","label":"Start time","readOnly":true}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "Channel",
+                    "attributes": {"dataType":"String","label":"Channel","description":"Web, Slack, Teams, Facebook, AzureEmail, AzureSMS, WhatsApp, API (future)","readOnly":true}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "Mode",
+                    "attributes": {"dataType":"String","label":"Mode","description":"User, Emulate, Test, or DesignTester","readOnly":true}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "Ip",
+                    "attributes": {"dataType":"String","label":"IP","readOnly":true}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "CurrentPage",
+                    "attributes": {"dataType":"String","label":"Current page"}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "Context",
+                    "attributes": {"dataType":"String","label":"Context"}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "UserAgent",
+                    "attributes": {"dataType":"String","label":"UserAgent","readOnly":true}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "Rating",
+                    "attributes": {"dataType":"Integer","label":"Rating"}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "RatingDescription",
+                    "attributes": {"dataType":"String","label":"Rating Description"}
+                  },
+                  {
+                    "type": "Group",
+                    "name": "User",
+                    "attributes": {"label":"Chatbot User","readOnly":true},
+                    "items": [
+                      {
+                        "type": "Value",
+                        "name": "CreatedTime",
+                        "attributes": {"dataType":"DateTime","label":"Created on","readOnly":true}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "LastUpdatedTime",
+                        "attributes": {"dataType":"DateTime","label":"Last updated on","readOnly":true}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "Anonymous",
+                        "attributes": {"dataType":"Boolean","label":"Anonymous","readOnly":true}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "FriendlyName",
+                        "attributes": {"dataType":"String","label":"Friendly name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "FirstName",
+                        "attributes": {"dataType":"String","label":"First name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "LastName",
+                        "attributes": {"dataType":"String","label":"Last name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "VerifiedMobilePhone",
+                        "attributes": {"dataType":"String","label":"Mobile phone"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "VerifiedEmail",
+                        "attributes": {"dataType":"String","label":"Email"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TdWorkMgtUserId",
+                        "attributes": {"dataType":"String","label":"TD Work Mgt User Id"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "MicrosoftId",
+                        "attributes": {"dataType":"String","label":"Microsoft Id"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "GoogleId",
+                        "attributes": {"dataType":"String","label":"Google Id"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "FacebookId",
+                        "attributes": {"dataType":"String","label":"Facebook Id"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ConversationCount",
+                        "attributes": {"dataType":"Integer","label":"Conversation count","readOnly":true}
+                      },
+                      {
+                        "type": "Table",
+                        "name": "Properties",
+                        "items": [
+                          {
+                            "type": "Value",
+                            "name": "Name",
+                            "attributes": {"dataType":"String","label":"Name"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Value",
+                            "attributes": {"label":"Value"}
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Table",
+                    "name": "Properties",
+                    "items": [
+                      {
+                        "type": "Value",
+                        "name": "Name",
+                        "attributes": {"dataType":"String","label":"Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "Value",
+                        "attributes": {"label":"Value"}
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": 3,
+              "stepType": "BotResponse",
+              "usesHiddenDataset": true,
+              "texts": [
+                {"type":"StringLiteral","value":"Let’s get a ticket created for you."}
+              ]
+            },
+            {
+              "id": 4,
+              "stepType": "BotResponse",
+              "datasetName": "Title Title",
+              "usesDataset": true,
+              "usesHiddenDataset": true,
+              "texts": [
+                {"type":"StringLiteral","value":"Please provide a short description of what you need assistance with."}
+              ],
+              "allowFuzzyValidation": true,
+              "waitForInput": true,
+              "datasetId": "$ds$4",
+              "outputDataModel": {
+                "type": "Group",
+                "name": "Title Title",
+                "items": [
+                  {
+                    "type": "Value",
+                    "name": "Valid",
+                    "attributes": {"dataType":"TrueFalse"}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "UserInput",
+                    "attributes": {"dataType":"String"}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "NormalizedInput",
+                    "attributes": {"dataType":"String"}
+                  }
+                ]
+              }
+            },
+            {
+              "id": 5,
+              "stepType": "BotResponse",
+              "datasetName": "Description",
+              "usesDataset": true,
+              "usesHiddenDataset": true,
+              "texts": [
+                {"type":"StringLiteral","value":"Would you like to add any details to the request?"}
+              ],
+              "validationType": "Steps",
+              "allowFuzzyValidation": true,
+              "useValidationsAsChoices": true,
+              "choicesPresentation": 2,
+              "waitForInput": true,
+              "datasetId": "$ds$5",
+              "outputDataModel": {
+                "type": "Group",
+                "items": [
+                  {
+                    "type": "Value",
+                    "name": "Valid",
+                    "attributes": {"dataType":"TrueFalse"}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "UserInput",
+                    "attributes": {"dataType":"String"}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "NormalizedInput",
+                    "attributes": {"dataType":"String"}
+                  }
+                ]
+              },
+              "steps": [
+                {
+                  "id": 6,
+                  "stepType": "Case",
+                  "matchExpressions": [
+                    {"type":"StringLiteral","value":"[[affirmative]]","name":"Yes/Affirmative"}
+                  ],
+                  "defaultDatasetNamePrefix": "Dataset",
+                  "steps": [
+                    {
+                      "id": 7,
+                      "stepType": "BotResponse",
+                      "datasetName": "Ticket Description",
+                      "usesDataset": true,
+                      "usesHiddenDataset": true,
+                      "texts": [
+                        {"type":"StringLiteral","value":"What details would you like to add?"}
+                      ],
+                      "allowFuzzyValidation": true,
+                      "waitForInput": true,
+                      "datasetId": "$ds$7",
+                      "outputDataModel": {
+                        "type": "Group",
+                        "name": "Ticket Description",
+                        "items": [
+                          {
+                            "type": "Value",
+                            "name": "Valid",
+                            "attributes": {"dataType":"TrueFalse"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "UserInput",
+                            "attributes": {"dataType":"String"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "NormalizedInput",
+                            "attributes": {"dataType":"String"}
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": 8,
+                  "stepType": "Case",
+                  "matchExpressions": [
+                    {"type":"StringLiteral","value":"[[negative]]","name":"No/Negative"}
+                  ],
+                  "defaultDatasetNamePrefix": "Dataset",
+                  "steps": [
+                    {
+                      "id": 9,
+                      "stepType": "BotResponse",
+                      "usesHiddenDataset": true,
+                      "texts": [
+                        {"type":"StringLiteral","value":"Okay"}
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 10,
+              "stepType": "Connector",
+              "datasetName": "TDX Tickets: Create New Ticket",
+              "configuration": {"isAppAuthorization":false,"action":"/api/{appId}/tickets|~|~|post|~|~|081e59dc-36cb-46b4-b74d-50a704b5d981","inputModel":"{\"name\":\"Create New Ticket\",\"attributes\":{\"connectorInfo\":{\"contentBody\":false,\"mediaType\":\"\"},\"dataType\":\"Object\",\"validationFlags\":1},\"type\":\"Group\",\"items\":[{\"name\":\"appId\",\"attributes\":{\"connectorInfo\":{\"parameterLocation\":\"path\",\"contentBody\":false,\"mediaType\":\"\"},\"dataType\":\"Integer\",\"description\":\"App ID\"},\"type\":\"Value\",\"expression\":{\"type\":\"NumericLiteral\",\"value\":36,\"name\":\"IT Tickets\"}},{\"name\":\"EnableNotifyReviewer\",\"attributes\":{\"connectorInfo\":{\"parameterLocation\":\"query\",\"contentBody\":false,\"mediaType\":\"\"},\"dataType\":\"YesNo\",\"description\":\"Whether reviewer notification should be enabled.\"},\"type\":\"Value\"},{\"name\":\"NotifyRequestor\",\"attributes\":{\"connectorInfo\":{\"parameterLocation\":\"query\",\"contentBody\":false,\"mediaType\":\"\"},\"dataType\":\"YesNo\",\"description\":\"Whether the requestor should be notified.\"},\"type\":\"Value\"},{\"name\":\"NotifyResponsible\",\"attributes\":{\"connectorInfo\":{\"parameterLocation\":\"query\",\"contentBody\":false,\"mediaType\":\"\"},\"dataType\":\"YesNo\",\"description\":\"Whether the responsible resource(s) should be notified.\"},\"type\":\"Value\"},{\"name\":\"AllowRequestorCreation\",\"attributes\":{\"connectorInfo\":{\"parameterLocation\":\"query\",\"contentBody\":false,\"mediaType\":\"\"},\"dataType\":\"YesNo\",\"description\":\"Whether a requestor should be created if an existing person with matching information cannot be found.\"},\"type\":\"Value\"},{\"name\":\"Content\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Object\",\"validationFlags\":1,\"description\":\"A ticket containing only editable properties.\"},\"type\":\"Group\",\"items\":[{\"name\":\"TypeId\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\",\"expression\":{\"type\":\"NumericLiteral\",\"value\":2504,\"name\":\"Technology Services / General\"}},{\"name\":\"FormID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\",\"expression\":{\"type\":\"NumericLiteral\",\"value\":211,\"name\":\"Incident Form\"}},{\"name\":\"Title\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\"},\"type\":\"Value\"},{\"name\":\"Description\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\",\"nullable\":true},\"type\":\"Value\"},{\"name\":\"IsRichHtml\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"YesNo\"},\"type\":\"Value\"},{\"name\":\"AccountID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\",\"expression\":{\"type\":\"NumericLiteral\",\"value\":7309}},{\"name\":\"SourceID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\",\"expression\":{\"type\":\"NumericLiteral\",\"value\":332,\"name\":\"Web Client Bot\"}},{\"name\":\"StatusID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\",\"expression\":{\"type\":\"NumericLiteral\",\"value\":372,\"name\":\"New\"}},{\"name\":\"ImpactID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\"},{\"name\":\"UrgencyID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\"},{\"name\":\"PriorityID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\"},{\"name\":\"Classification\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\",\"format\":\"int32\"},\"dataType\":\"Integer\"},\"type\":\"Value\",\"expression\":{\"type\":\"NumericLiteral\",\"value\":32,\"name\":\"Incident\"}},{\"name\":\"GoesOffHoldDate\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\",\"format\":\"date-time\"},\"dataType\":\"DateTime\",\"nullable\":true},\"type\":\"Value\"},{\"name\":\"RequestorUid\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\",\"nullable\":true},\"type\":\"Value\",\"expression\":{\"type\":\"Identifier\",\"value\":\"$ds$-3['User']['TdWorkMgtUserId']\"}},{\"name\":\"RequestorName\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\",\"description\":\"The full name of the requestor associated with the ticket - Only used on ticket creation when Allow Requestor Creation is enabled.\"},\"type\":\"Value\"},{\"name\":\"RequestorEmail\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\",\"description\":\"The email address of the requestor associated with the ticket - Only used on ticket creation when Allow Requestor Creation is enabled.\"},\"type\":\"Value\"},{\"name\":\"RequestorPhone\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\",\"description\":\"The phone number of the requestor associated with the ticket - Only used on ticket creation when Allow Requestor Creation is enabled.\"},\"type\":\"Value\"},{\"name\":\"EstimatedMinutes\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\"},{\"name\":\"StartDate\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\",\"format\":\"date-time\"},\"dataType\":\"DateTime\",\"nullable\":true},\"type\":\"Value\"},{\"name\":\"EndDate\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\",\"format\":\"date-time\"},\"dataType\":\"DateTime\"},\"type\":\"Value\"},{\"name\":\"ResponsibleUid\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\",\"nullable\":true},\"type\":\"Value\"},{\"name\":\"ResponsibleGroupID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\",\"expression\":{\"type\":\"NumericLiteral\",\"value\":2}},{\"name\":\"RespondedDate\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\",\"format\":\"date-time\"},\"dataType\":\"DateTime\"},\"type\":\"Value\"},{\"name\":\"TimeBudget\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\",\"format\":\"double\"},\"dataType\":\"Float\"},\"type\":\"Value\"},{\"name\":\"ExpensesBudget\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Float\"},\"type\":\"Value\"},{\"name\":\"LocationID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\"},{\"name\":\"LocationRoomID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\"},{\"name\":\"ServiceID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\"},{\"name\":\"ServiceOfferingID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\"},{\"name\":\"ArticleID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\"},{\"name\":\"ArticleShortcutID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\",\"nullable\":true},\"type\":\"Value\"},{\"name\":\"ParentID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"Value\"},{\"name\":\"Attributes\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"tableMode\":\"Property\",\"outputMode\":\"Default\",\"dataType\":\"Object\",\"nullable\":true},\"type\":\"Table\",\"items\":[{\"name\":\"ID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\",\"format\":\"int32\"},\"dataType\":\"Integer\"},\"type\":\"Value\"},{\"name\":\"Name\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\"},\"type\":\"Value\"},{\"name\":\"Order\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Float\"},\"type\":\"Value\"},{\"name\":\"Description\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\"},\"type\":\"Value\"},{\"name\":\"SectionID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Float\"},\"type\":\"Value\"},{\"name\":\"FieldType\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\"},\"type\":\"Value\"},{\"name\":\"DataType\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\"},\"type\":\"Value\"},{\"name\":\"IsRequired\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"YesNo\"},\"type\":\"Value\"},{\"name\":\"IsUpdatable\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"YesNo\"},\"type\":\"Value\"},{\"name\":\"Value\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\"},\"type\":\"Value\"},{\"name\":\"ValueText\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\"},\"type\":\"Value\"},{\"name\":\"ChoicesText\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\"},\"type\":\"Value\"},{\"name\":\"SectionName\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\"},\"type\":\"Value\"},{\"name\":\"Choices\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"tableMode\":\"Property\",\"outputMode\":\"Default\",\"dataType\":\"Object\"},\"type\":\"Table\",\"items\":[{\"name\":\"ID\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Float\"},\"type\":\"Value\"},{\"name\":\"Name\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"String\"},\"type\":\"Value\"},{\"name\":\"IsActive\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"YesNo\"},\"type\":\"Value\"},{\"name\":\"DateCreated\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\",\"format\":\"date-time\"},\"dataType\":\"DateTime\"},\"type\":\"Value\"},{\"name\":\"DateModified\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\",\"format\":\"date-time\"},\"dataType\":\"DateTime\"},\"type\":\"Value\"},{\"name\":\"Order\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Float\"},\"type\":\"Value\"}]},{\"name\":\"AssociatedItemIDs\",\"attributes\":{\"connectorInfo\":{\"contentBody\":true,\"mediaType\":\"application/json\"},\"dataType\":\"Integer\"},\"type\":\"List\"}],\"initializationData\":[{\"type\":\"Table\"}]}]}]}","userDefinedOutputModel":false},
+              "connectorUid": "7061b7d3-1fda-4aec-9215-469066ab2eab",
+              "connectorName": "TDX Tickets",
+              "ancestors": [
+                "081e59dc-36cb-46b4-b74d-50a704b5d981",
+                "00a728bb-5f08-4a6b-864b-4179ff7e1f30"
+              ],
+              "productId": "REST API",
+              "usesDataset": true,
+              "datasetId": "$ds$10",
+              "outputDataModel": {
+                "type": "Group",
+                "items": [
+                  {
+                    "type": "Group",
+                    "name": "Response",
+                    "attributes": {"validationFlags":"AllowNoChildren","label":"Ticket"},
+                    "items": [
+                      {
+                        "type": "Value",
+                        "name": "ID",
+                        "attributes": {"dataType":"Integer","label":"ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ParentID",
+                        "attributes": {"dataType":"Integer","label":"Parent ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ParentTitle",
+                        "attributes": {"dataType":"String","label":"Parent Title"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ParentClass",
+                        "attributes": {"dataType":"Integer","label":"Parent Class"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TypeID",
+                        "attributes": {"dataType":"Integer","label":"Type ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TypeName",
+                        "attributes": {"dataType":"String","label":"Type Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TypeCategoryID",
+                        "attributes": {"dataType":"Integer","label":"Type Category ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TypeCategoryName",
+                        "attributes": {"dataType":"String","label":"TypeCategoryName"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "Classification",
+                        "attributes": {"dataType":"Integer","label":"Classification"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ClassificationName",
+                        "attributes": {"dataType":"String","label":"Classification Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "FormID",
+                        "attributes": {"dataType":"Integer","label":"Form ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "FormName",
+                        "attributes": {"dataType":"String","label":"Form Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "Title",
+                        "attributes": {"dataType":"String","label":"Title"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "Description",
+                        "attributes": {"dataType":"String","label":"Description"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "Uri",
+                        "attributes": {"dataType":"String","label":"URI"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "AccountID",
+                        "attributes": {"dataType":"Integer","label":"Account ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "AccountName",
+                        "attributes": {"dataType":"String","label":"Account Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "SourceID",
+                        "attributes": {"dataType":"Integer","label":"Source ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "SourceName",
+                        "attributes": {"dataType":"String","label":"Source Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "StatusID",
+                        "attributes": {"dataType":"Integer","label":"Status ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "StatusName",
+                        "attributes": {"dataType":"String","label":"Status Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "StatusClass",
+                        "attributes": {"dataType":"Integer","label":"Status Class"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ImpactID",
+                        "attributes": {"dataType":"Integer","label":"Impact ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ImpactName",
+                        "attributes": {"dataType":"String","label":"Impact Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "UrgencyID",
+                        "attributes": {"dataType":"Integer","label":"Urgency ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "UrgencyName",
+                        "attributes": {"dataType":"String","label":"Urgency Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "PriorityID",
+                        "attributes": {"dataType":"Integer","label":"Priority ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "PriorityName",
+                        "attributes": {"dataType":"String","label":"Priority Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "PriorityOrder",
+                        "attributes": {"dataType":"Numeric","label":"Priority Order"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "SlaID",
+                        "attributes": {"dataType":"Integer","label":"SLA ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "SlaName",
+                        "attributes": {"dataType":"String","label":"SLA Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "IsSlaViolated",
+                        "attributes": {"dataType":"Boolean","label":"Is SLA Violated"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "IsSlaRespondByViolated",
+                        "attributes": {"dataType":"Boolean","label":"Is SLA Respond By Violated"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "IsSlaResolveByViolated",
+                        "attributes": {"dataType":"Boolean","label":"Is SLA Resolve By Violated"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "RespondByDate",
+                        "attributes": {"dataType":"String","label":"Respond By Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ResolveByDate",
+                        "attributes": {"dataType":"String","label":"Resolve By Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "SlaBeginDate",
+                        "attributes": {"dataType":"String","label":"SLA Begin Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "IsOnHold",
+                        "attributes": {"dataType":"Boolean","label":"Is On Hold"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "PlacedOnHoldDate",
+                        "attributes": {"dataType":"String","label":"Placed On Hold Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "GoesOffHoldDate",
+                        "attributes": {"dataType":"String","label":"Goes Off Hold Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "CreatedDate",
+                        "attributes": {"dataType":"String","label":"Created Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "CreatedUid",
+                        "attributes": {"dataType":"String","label":"Creator UID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "CreatedFullName",
+                        "attributes": {"dataType":"String","label":"Creator Full Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "CreatedEmail",
+                        "attributes": {"dataType":"String","label":"Creator Email"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ModifiedDate",
+                        "attributes": {"dataType":"String","label":"Modified Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ModifiedUid",
+                        "attributes": {"dataType":"String","label":"Modifier UID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ModifiedFullName",
+                        "attributes": {"dataType":"String","label":"Modifier Full Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "RequestorName",
+                        "attributes": {"dataType":"String","label":"Requestor Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "RequestorFirstName",
+                        "attributes": {"dataType":"String","label":"Requestor First Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "RequestorLastName",
+                        "attributes": {"dataType":"String","label":"Requestor Last Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "RequestorEmail",
+                        "attributes": {"dataType":"String","label":"Requestor Email"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "RequestorPhone",
+                        "attributes": {"dataType":"String","label":"Requestor Phone"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "RequestorUid",
+                        "attributes": {"dataType":"String","label":"Requestor UID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ActualMinutes",
+                        "attributes": {"dataType":"Integer","label":"Actual Minutes"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "EstimatedMinutes",
+                        "attributes": {"dataType":"Integer","label":"Estimated Minutes"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "DaysOld",
+                        "attributes": {"dataType":"Integer","label":"Days Old"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ResponsibleFullName",
+                        "attributes": {"dataType":"String","label":"Responsible Full Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ResponsibleEmail",
+                        "attributes": {"dataType":"String","label":"Responsible Email"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ResponsibleGroupID",
+                        "attributes": {"dataType":"Integer","label":"Responsible Group ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ResponsibleGroupName",
+                        "attributes": {"dataType":"String","label":"Responsible Group Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "RespondedDate",
+                        "attributes": {"dataType":"String","label":"Responded Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "RespondedUid",
+                        "attributes": {"dataType":"String","label":"Responded UID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "RespondedFullName",
+                        "attributes": {"dataType":"String","label":"Responded Full Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "CompletedDate",
+                        "attributes": {"dataType":"String","label":"Completed Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "CompletedUid",
+                        "attributes": {"dataType":"String","label":"Completed UID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "CompletedFullName",
+                        "attributes": {"dataType":"String","label":"Completed Full Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ReviewerFullName",
+                        "attributes": {"dataType":"String","label":"Reviewer Full Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ReviewerEmail",
+                        "attributes": {"dataType":"String","label":"Reviewer Email"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ReviewingGroupID",
+                        "attributes": {"dataType":"Integer","label":"Reviewing Group ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ReviewingGroupName",
+                        "attributes": {"dataType":"String","label":"Reviewing Group Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TimeBudget",
+                        "attributes": {"dataType":"Numeric","label":"Time Budget"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ExpensesBudget",
+                        "attributes": {"dataType":"Numeric","label":"Expenses Budget"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TimeBudgetUsed",
+                        "attributes": {"dataType":"Numeric","label":"Time Budget Used"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ExpensesBudgetUsed",
+                        "attributes": {"dataType":"Numeric","label":"Expenses Budget Used"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "IsConvertedToTask",
+                        "attributes": {"dataType":"Boolean","label":"Is Converted To Task"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ConvertedToTaskDate",
+                        "attributes": {"dataType":"String","label":"Converted To Task Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ConvertedToTaskFullName",
+                        "attributes": {"dataType":"String","label":"Converted To Task Full Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TaskProjectID",
+                        "attributes": {"dataType":"Integer","label":"Task Project ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TaskProjectName",
+                        "attributes": {"dataType":"String","label":"Task Project Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TaskPlanID",
+                        "attributes": {"dataType":"Integer","label":"Task Plan ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TaskPlanName",
+                        "attributes": {"dataType":"String","label":"Task Plan Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TaskID",
+                        "attributes": {"dataType":"Integer","label":"Task ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TaskTitle",
+                        "attributes": {"dataType":"String","label":"Task Title"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TaskStartDate",
+                        "attributes": {"dataType":"String","label":"Task Start Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TaskEndDate",
+                        "attributes": {"dataType":"String","label":"Task End Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "TaskPercentComplete",
+                        "attributes": {"dataType":"Integer","label":"Task Percent Complete"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "LocationID",
+                        "attributes": {"dataType":"Integer","label":"Location ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "LocationName",
+                        "attributes": {"dataType":"String","label":"Location Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "LocationRoomID",
+                        "attributes": {"dataType":"Integer","label":"Location Room ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "LocationRoomName",
+                        "attributes": {"dataType":"String","label":"Location Room Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "RefCode",
+                        "attributes": {"dataType":"String","label":"Ref Code"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ServiceID",
+                        "attributes": {"dataType":"Integer","label":"Service ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ServiceName",
+                        "attributes": {"dataType":"String","label":"Service Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ServiceCategoryID",
+                        "attributes": {"dataType":"Numeric","label":"Service Category ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ServiceCategoryName",
+                        "attributes": {"dataType":"String","label":"Service Category Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ArticleID",
+                        "attributes": {"dataType":"Integer","label":"Article ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ArticleSubject",
+                        "attributes": {"dataType":"String","label":"Article Subject"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ArticleStatus",
+                        "attributes": {"dataType":"Integer","label":"Article Status"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ArticleCategoryPathNames",
+                        "attributes": {"dataType":"String","label":"Article Category Path Names"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ArticleAppID",
+                        "attributes": {"dataType":"Integer","label":"Article App ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ArticleShortcutID",
+                        "attributes": {"dataType":"Integer","label":"Article Shortcut ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "AppID",
+                        "attributes": {"dataType":"Integer","label":"App ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "StartDate",
+                        "attributes": {"dataType":"String","label":"Start Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "EndDate",
+                        "attributes": {"dataType":"String","label":"End Date"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ResponsibleUid",
+                        "attributes": {"dataType":"String","label":"Responsible UID"}
+                      },
+                      {
+                        "type": "Table",
+                        "name": "Attributes",
+                        "attributes": {"label":"Attributes"},
+                        "items": [
+                          {
+                            "type": "Value",
+                            "name": "ID",
+                            "attributes": {"dataType":"Integer","label":"ID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Name",
+                            "attributes": {"dataType":"String","label":"Name"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Order",
+                            "attributes": {"dataType":"Numeric","label":"Order"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Description",
+                            "attributes": {"dataType":"String","label":"Description"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "SectionID",
+                            "attributes": {"dataType":"Numeric","label":"Section ID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "FieldType",
+                            "attributes": {"dataType":"String","label":"Field Type"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "DataType",
+                            "attributes": {"dataType":"String","label":"Data Type"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "IsRequired",
+                            "attributes": {"dataType":"Boolean","label":"Is Required"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "IsUpdatable",
+                            "attributes": {"dataType":"Boolean","label":"Is Updatable"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Value",
+                            "attributes": {"dataType":"String","label":"Value"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ValueText",
+                            "attributes": {"dataType":"String","label":"Value Text"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ChoicesText",
+                            "attributes": {"dataType":"String","label":"Choices Text"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "SectionName",
+                            "attributes": {"dataType":"String","label":"Section Name"}
+                          },
+                          {
+                            "type": "Table",
+                            "name": "Choices",
+                            "attributes": {"label":"Choices"},
+                            "items": [
+                              {
+                                "type": "Value",
+                                "name": "ID",
+                                "attributes": {"dataType":"Numeric","label":"ID"}
+                              },
+                              {
+                                "type": "Value",
+                                "name": "Name",
+                                "attributes": {"dataType":"String","label":"Name"}
+                              },
+                              {
+                                "type": "Value",
+                                "name": "IsActive",
+                                "attributes": {"dataType":"Boolean","label":"IsActive"}
+                              },
+                              {
+                                "type": "Value",
+                                "name": "DateCreated",
+                                "attributes": {"dataType":"String","label":"DateCreated"}
+                              },
+                              {
+                                "type": "Value",
+                                "name": "DateModified",
+                                "attributes": {"dataType":"String","label":"DateModified"}
+                              },
+                              {
+                                "type": "Value",
+                                "name": "Order",
+                                "attributes": {"dataType":"Numeric","label":"Order"}
+                              }
+                            ]
+                          },
+                          {
+                            "type": "List",
+                            "name": "AssociatedItemIDs",
+                            "attributes": {"dataType":"Integer"}
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Table",
+                        "name": "Tasks",
+                        "attributes": {"label":"Tasks"},
+                        "items": [
+                          {
+                            "type": "Value",
+                            "name": "Title",
+                            "attributes": {"dataType":"String","label":"Title"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Description",
+                            "attributes": {"dataType":"String","label":"Description"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "StartDate",
+                            "attributes": {"dataType":"String","label":"Start Date"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "EndDate",
+                            "attributes": {"dataType":"String","label":"End Date"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ID",
+                            "attributes": {"dataType":"Integer","label":"ID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "TicketID",
+                            "attributes": {"dataType":"Integer","label":"Ticket ID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "IsActive",
+                            "attributes": {"dataType":"Boolean","label":"Is Active"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "CompleteWithinMinutes",
+                            "attributes": {"dataType":"Integer","label":"Complete Within Minutes"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "EstimatedMinutes",
+                            "attributes": {"dataType":"Integer","label":"Estimated Minutes"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ActualMinutes",
+                            "attributes": {"dataType":"Integer","label":"Actual Minutes"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "PercentComplete",
+                            "attributes": {"dataType":"Integer","label":"Percent Complete"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "CreatedDate",
+                            "attributes": {"dataType":"String","label":"Created Date"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "CreatedUid",
+                            "attributes": {"dataType":"String","label":"Created UID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "CreatedFullName",
+                            "attributes": {"dataType":"String","label":"Created Full Name"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "CreatedEmail",
+                            "attributes": {"dataType":"String","label":"Created Email"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ModifiedDate",
+                            "attributes": {"dataType":"String","label":"Modified Date"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ModifiedUid",
+                            "attributes": {"dataType":"String","label":"Modified UID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ModifiedFullName",
+                            "attributes": {"dataType":"String","label":"Modified Full Name"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "CompletedDate",
+                            "attributes": {"dataType":"String","label":"Completed Date"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "CompletedUid",
+                            "attributes": {"dataType":"String","label":"Completed UID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "CompletedFullName",
+                            "attributes": {"dataType":"String","label":"Completed Full Name"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ResponsibleUid",
+                            "attributes": {"dataType":"String","label":"Responsible UID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ResponsibleFullName",
+                            "attributes": {"dataType":"String","label":"Responsible Full Name"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ResponsibleEmail",
+                            "attributes": {"dataType":"String","label":"Responsible Email"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ResponsibleGroupID",
+                            "attributes": {"dataType":"Integer","label":"Responsible Group ID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ResponsibleGroupName",
+                            "attributes": {"dataType":"String","label":"Responsible Group Name"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "PredecessorID",
+                            "attributes": {"dataType":"Integer","label":"Predecessor ID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "PredecessorTitle",
+                            "attributes": {"dataType":"String","label":"Predecessor Title"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Order",
+                            "attributes": {"dataType":"Integer","label":"Order"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "TypeID",
+                            "attributes": {"dataType":"Integer","label":"Type ID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "DetectedConflictCount",
+                            "attributes": {"dataType":"Integer","label":"Detected Conflict Count"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "DetectedConflictTypes",
+                            "attributes": {"dataType":"Integer","label":"Detected Conflict Types"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "LastConflictScanDateUtc",
+                            "attributes": {"dataType":"String","label":"Last Conflict Scan Date (UTC)"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Uri",
+                            "attributes": {"dataType":"String","label":"URI"}
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Table",
+                        "name": "Notify",
+                        "attributes": {"label":"Notify"},
+                        "items": [
+                          {
+                            "type": "Value",
+                            "name": "ItemRole",
+                            "attributes": {"dataType":"String","label":"Item Role"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Name",
+                            "attributes": {"dataType":"String","label":"Name"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Initials",
+                            "attributes": {"dataType":"String","label":"Initials"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Value",
+                            "attributes": {"dataType":"String","label":"Value"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "RefValue",
+                            "attributes": {"dataType":"Integer","label":"Ref Value"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ProfileImageFileName",
+                            "attributes": {"dataType":"String","label":"Profile Image File Name"}
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Table",
+                        "name": "Attachments",
+                        "attributes": {"label":"Attachments"},
+                        "items": [
+                          {
+                            "type": "Value",
+                            "name": "ID",
+                            "attributes": {"dataType":"String","label":"ID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "AttachmentType",
+                            "attributes": {"dataType":"Integer","label":"Attachment Type"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ItemID",
+                            "attributes": {"dataType":"Integer","label":"Item ID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "CreatedUid",
+                            "attributes": {"dataType":"String","label":"Created UID"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "CreatedFullName",
+                            "attributes": {"dataType":"String","label":"Created Full Name"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "CreatedDate",
+                            "attributes": {"dataType":"String","label":"Created Date"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Name",
+                            "attributes": {"dataType":"String","label":"Name"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Size",
+                            "attributes": {"dataType":"Integer","label":"Size"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "Uri",
+                            "attributes": {"dataType":"String","label":"URI"}
+                          },
+                          {
+                            "type": "Value",
+                            "name": "ContentUri",
+                            "attributes": {"dataType":"String","label":"Content URI"}
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Value",
+                        "name": "IsRichHtml",
+                        "attributes": {"dataType":"Boolean","label":"HTML Description"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ServiceOfferingID",
+                        "attributes": {"dataType":"Integer","label":"Service Offering ID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "ServiceOfferingName",
+                        "attributes": {"dataType":"String","label":"Service Offering Name"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "WorkflowName",
+                        "attributes": {"dataType":"String","label":"WorkflowName"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "WorkflowID",
+                        "attributes": {"dataType":"Integer","label":"WorkflowID"}
+                      },
+                      {
+                        "type": "Value",
+                        "name": "WorkflowConfigurationID",
+                        "attributes": {"dataType":"Integer","label":"WorkflowConfigurationID"}
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Group",
+                    "name": "Headers",
+                    "attributes": {"validationFlags":"AllowNoChildren"}
+                  },
+                  {
+                    "type": "Value",
+                    "name": "HTTPResponseCode"
+                  }
+                ]
+              },
+              "outputDataModelHash": 210921680,
+              "defaultDatasetNamePrefix": "Dataset",
+              "description": "TDX Tickets: Create New Ticket"
+            },
+            {
+              "id": 2,
+              "stepType": "End",
+              "usesDataset": true,
+              "datasetId": "$ds$2",
+              "defaultDatasetNamePrefix": "Dataset"
+            }
+          ]
+        },
+        {
+          "id": -2,
+          "stepType": "Clipboard",
+          "defaultDatasetNamePrefix": "Dataset"
+        }
+      ]
+    },
+    "Options": {}
+  }
+}
